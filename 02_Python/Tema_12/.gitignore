@@ -2,3 +2,4 @@ venv/
 peliculas/migrations/__pycache__/
 peliculas/__pycache__/
 directores_cine/__pycache__/
+.idea
