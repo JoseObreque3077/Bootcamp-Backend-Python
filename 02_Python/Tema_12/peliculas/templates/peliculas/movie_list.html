@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <title>Peliculas</title>
+</head>
+<body class="text-bg-light">
+<div class="row mt-2">
+    <div class="col">
+        <h1 class="text-center">Listado de Películas</h1>
+        <h4 class="text-center">Proyecto de introducción a Django</h4>
+    </div>
+</div>
+<div class="row row-cols-1 row-cols-md-2 g-4 mx-2 my-2">
+    {% for object in object_list %}
+    <div class="col">
+        <div class="card h-100 text-bg-info">
+            <div class="card-body">
+                <h5 class="card-title">{{ object.title }}</h5>
+                <p class="card-text">Director: {{object.director}}</p>
+                <p class="card-text">Duración: {{ object.running_time }} min</p>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <h2>No hay registros disponibles!</h2>
+    {% endfor %}
+</div>
+</body>
+</html>
